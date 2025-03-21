@@ -1,4 +1,4 @@
-#E-commerce Recommendation System using Python
+E-commerce Recommendation System using Python
 
 This is an academic project of a Personalized E-commerce Recommendation System. The data analysis pipeline involved the below steps:
 
@@ -11,6 +11,7 @@ SVD (Singular Value Decomposition) and SVD ++
 Alternating Least Squares (ALS)
 KNN Clustering
 Libraries used: Pandas, Scikit-learn, PySpark, Seaborn, Surprise
+
 
 The Dataset is from a public dataset from OList, a Brazilian Ecommerce store:
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_products_dataset.csv]
