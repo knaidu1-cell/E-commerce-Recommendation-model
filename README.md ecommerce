@@ -1,16 +1,60 @@
-E-commerce Recommendation System using Python
+Ecommerce Recommender System with Spark ALS
+This project builds an end-to-end recommender system for an e-commerce platform using Apache Spark’s ALS (Alternating Least Squares) algorithm on transaction and review data. The workflow covers data ingestion, feature engineering, exploratory analysis, model training, and evaluation inside a single notebook.
 
-This is an academic project of a Personalized E-commerce Recommendation System. The data analysis pipeline involved the below steps:
+Project overview
+Use real-world e-commerce orders, products, customers, and reviews data.
 
-1. Data Exploration
-2. Data Pre-processing
-3. Feature Engineering
-4. Machine learning models testing,finetuning and evaluation–
-5. User and Model-based Collaborative Filtering
-6. SVD (Singular Value Decomposition) and SVD ++
-7. Alternating Least Squares (ALS)
-8. KNN Clustering
-Libraries used: Pandas, Scikit-learn, PySpark, Seaborn, Surprise
+Engineer customer–product interaction features (recency, frequency, monetary value, product/category info, review scores).
+
+Build explicit/implicit feedback matrices and train an ALS recommender.
+
+Evaluate recommendation quality with ranking metrics such as precision at K.
+
+Generate top-N product recommendations for each customer segment.
+
+Features
+Data preprocessing:
+
+Load and join multiple raw tables (orders, items, customers, sellers, reviews).
+
+Handle missing values, outliers, and skewed distributions with log transforms.
+
+Encode categorical variables and index IDs for ALS input.
+
+Exploratory data analysis:
+
+Descriptive stats of order values, prices, freight, review scores, and product attributes.
+
+Category-level aggregates (number of products, orders, and average price).
+
+RFM/behavioral features such as recency, distinct products purchased, and purchase frequency.
+
+Modeling:
+
+Build a user–item rating matrix from customer–product interactions.
+
+Train Spark ALS with hyperparameters (rank, regularization, iterations).
+
+Evaluate recommendations using held-out interactions and ranking metrics (e.g., precision).
+
+Recommendations:
+
+Generate top-K product recommendations per customer.
+
+Inspect example users, recommended items, and scores.
+
+Tech stack
+Python
+
+Apache Spark (SparkSession and MLlib ALS)
+
+Jupyter Notebook
+
+Pandas / NumPy
+
+(Optional) Matplotlib / Seaborn for visualization
+
+Project structure
 
 The Dataset is from a public dataset from OList, a Brazilian Ecommerce store:
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_products_dataset.csv]
