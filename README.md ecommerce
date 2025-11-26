@@ -51,10 +51,8 @@ Apache Spark (SparkSession and MLlib ALS)
 Jupyter Notebook
 
 Pandas / NumPy
+Matplotlib / Seaborn for visualization
 
-(Optional) Matplotlib / Seaborn for visualization
-
-Project structure
 
 The Dataset is from a public dataset from OList, a Brazilian Ecommerce store:
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?select=olist_products_dataset.csv]
