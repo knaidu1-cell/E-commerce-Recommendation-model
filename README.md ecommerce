@@ -1,57 +1,118 @@
-Ecommerce Recommender System with Spark ALS
-This project builds an end-to-end recommender system for an e-commerce platform using Apache Spark’s ALS (Alternating Least Squares) algorithm on transaction and review data. The workflow covers data ingestion, feature engineering, exploratory analysis, model training, and evaluation inside a single notebook.
+🚀 E-commerce Recommender System using Spark ALS
 
-Project overview
-Use real-world e-commerce orders, products, customers, and reviews data.
+This project builds a scalable, end-to-end product recommendation engine for an e-commerce platform using Apache Spark’s ALS (Alternating Least Squares) algorithm. The system integrates transactional, behavioral, and review data to deliver personalized top-N product recommendations to customers.
 
-Engineer customer–product interaction features (recency, frequency, monetary value, product/category info, review scores).
+⭐ Project Summary 
 
-Build explicit/implicit feedback matrices and train an ALS recommender.
+Developed a distributed recommendation model capable of handling large-scale e-commerce data. The pipeline performs data ingestion, feature engineering, EDA, model training, evaluation, and recommendation generation — all in a single unified PySpark notebook.
 
-Evaluate recommendation quality with ranking metrics such as precision at K.
+🧩 Key Objectives
 
-Generate top-N product recommendations for each customer segment.
+Integrate real-world e-commerce data (orders, products, customers, reviews).
 
-Features
-Data preprocessing:
+Build explicit and implicit user–item interaction matrices for ALS.
 
-Load and join multiple raw tables (orders, items, customers, sellers, reviews).
+Train and tune a scalable collaborative filtering model.
 
-Handle missing values, outliers, and skewed distributions with log transforms.
+Evaluate ranking performance using Precision@K and other metrics.
 
-Encode categorical variables and index IDs for ALS input.
+Generate top-N personalized recommendations for customers and segments.
 
-Exploratory data analysis:
+🔧 Tech Stack
 
-Descriptive stats of order values, prices, freight, review scores, and product attributes.
+Python · Apache Spark (MLlib ALS) · PySpark · Pandas · NumPy · Matplotlib · Seaborn · Jupyter Notebook
 
-Category-level aggregates (number of products, orders, and average price).
+🛠️ Data Preprocessing & Feature Engineering
 
-RFM/behavioral features such as recency, distinct products purchased, and purchase frequency.
+Joined multi-table e-commerce dataset (orders, order_items, products, sellers, reviews).
 
-Modeling:
+Performed missing-value imputation, outlier removal, and log transformation of skewed price/freight distributions.
 
-Build a user–item rating matrix from customer–product interactions.
+Engineered customer–product interaction features including:
 
-Train Spark ALS with hyperparameters (rank, regularization, iterations).
+Recency (days since last purchase)
 
-Evaluate recommendations using held-out interactions and ranking metrics (e.g., precision).
+Frequency (# of orders and distinct items purchased)
 
-Recommendations:
+Monetary value (order totals)
 
-Generate top-K product recommendations per customer.
+Product metadata (category, subcategory, attributes)
 
-Inspect example users, recommended items, and scores.
+Review-based scores
 
-Tech stack
-Python
+Indexed customer and product IDs using StringIndexer for ALS compatibility.
 
-Apache Spark (SparkSession and MLlib ALS)
+Constructed explicit (ratings) and implicit (purchase count) interaction matrices.
 
-Jupyter Notebook
+📊 Exploratory Data Analysis (EDA)
 
-Pandas / NumPy
-Matplotlib / Seaborn for visualization
+Analyzed order values, price distributions, freight costs, customer behavior, and review patterns.
+
+Computed category-level aggregates:
+
+Avg price
+
+Total orders
+
+Number of unique products
+
+Built RFM segmentation to understand customer purchase behavior.
+
+Visualized sales trends, customer activity, and rating distributions.
+
+🤖 Model Development — Spark MLlib ALS
+
+Constructed user–item rating matrix combining purchase frequency, recency, and review sentiment.
+
+Trained ALS model with hyperparameters:
+
+rank (latent factors)
+
+maxIter
+
+regParam
+
+cold-start strategy
+
+Used train–validation split to optimize model performance.
+
+Implemented both explicit and implicit feedback versions of ALS.
+
+📈 Evaluation
+
+Measured recommendation quality with Precision@K, NDCG, and Hit Rate.
+
+Validated using held-out customer–product interactions.
+
+Compared ALS implicit vs. explicit models and analyzed tradeoffs.
+
+🎯 Recommendation Generation
+
+Generated Top-N product recommendations per customer.
+
+Personalized suggestions based on behavioral patterns and predicted affinity scores.
+
+Created examples of:
+
+User profiles
+
+Recommended product lists
+
+Score interpretations
+
+Segmented users (new vs. frequent vs. high-value customers) to compare recommendation patterns.
+
+💡 Outcome
+
+Delivered a scalable, production-ready recommendation engine capable of powering personalization for an e-commerce platform. The system can be extended to:
+
+Dynamic pricing
+
+Cross-sell & upsell strategies
+
+Personalized marketing campaigns
+
+Customer segmentation workflows
 
 
 The Dataset is from a public dataset from OList, a Brazilian Ecommerce store:
